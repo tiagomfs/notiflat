@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,300)
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css)
+
+$success: #18A689
+$warning: #B28588
+$info: #2F82B2
+$error: #B23231
+$loading: #B27F94
+$question: #777888
+
+.cursor
+	cursor: hand
+	cursor: pointer
+
+.notiflat
+	position: fixed
+	z-index: 999
+	width: 300px
+	font-family: 'Roboto'
+
+	.notification
+		position: relative
+		display: none
+
+		& + .notification
+			margin-top: 10px
+
+		&.close
+			@extend .cursor
+
+		&:after
+			font-family: FontAwesome
+			font-style: normal
+			font-weight: normal
+			text-decoration: inherit
+			font-size: 15px
+			position: absolute
+			top: 0
+			left: 0
+			color: rgba(255,255,255,0.25)
+
+		&.success
+			background-color: $success
+			color: lighten($success, 50%)
+
+			&:after
+				content: "\f00c"
+				font-size: 48px
+
+		&.info
+			background-color: $info
+			color: darken($info, 10%)
+
+		&.error
+			background-color: $error
+			color: darken($error, 50%)
+
+		&.warning
+			background-color: $warning
+			color: darken($warning, 50%)
+
+		&.question
+			background-color: $question
+			color: darken($question, 50%)
+
+		&.loading
+			background-color: $loading
+			color: darken($loading, 50%)
+
+			&:after
+				content: "\f013"
+				animation: notispin 2s linear infinite
+
+	section
+		padding: 12px 30px 10px 55px
+		color: rgba(255,255,255,0.8)
+		font-size: 14px
+		font-weight: 400
+
+		i
+			float: right
+			color: rgba(255,255,255,0.4)
+			top: 11px
+			right: 10px
+			position: absolute
+
+			&:hover
+				color: rgba(255,255,255,0.8)
+				@extend .cursor
+
+	&.left
+		left: 10px
+
+	&.right
+		right: 10px
+
+	&.center
+		width: 500px
+		left: 50%
+		margin-left: -250px
+
+	&.bottom
+		bottom: 10px
+
+	&.top
+		top: 10px
+
+@keyframes notispin
+	100%
+		-webkit-transform: rotate(360deg)
+		transform: rotate(360deg)
