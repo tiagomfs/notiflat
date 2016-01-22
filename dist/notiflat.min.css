@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+.cursor, .notiflat .notification.close, .notiflat section i:hover {
+  cursor: hand;
+  cursor: pointer; }
+
+.notiflat {
+  position: fixed;
+  z-index: 999;
+  width: 300px;
+  font-family: "Roboto"; }
+  .notiflat .notification {
+    position: relative;
+    display: none; }
+    .notiflat .notification + .notification {
+      margin-top: 10px; }
+    .notiflat .notification:after {
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      font-size: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: rgba(255, 255, 255, 0.25); }
+    .notiflat .notification.success {
+      background-color: #18A689;
+      color: #c6f7ed; }
+      .notiflat .notification.success:after {
+        content: "";
+        font-size: 48px; }
+    .notiflat .notification.info {
+      background-color: #2F82B2;
+      color: #24658a; }
+    .notiflat .notification.error {
+      background-color: #B23231;
+      color: black; }
+    .notiflat .notification.warning {
+      background-color: #B28588;
+      color: #221617; }
+    .notiflat .notification.question {
+      background-color: #777888;
+      color: black; }
+    .notiflat .notification.loading {
+      background-color: #B27F94;
+      color: #1f1318; }
+      .notiflat .notification.loading:after {
+        content: "";
+        animation: notispin 2s linear infinite; }
+  .notiflat section {
+    padding: 12px 30px 10px 55px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400; }
+    .notiflat section i {
+      float: right;
+      color: rgba(255, 255, 255, 0.4);
+      top: 11px;
+      right: 10px;
+      position: absolute; }
+      .notiflat section i:hover {
+        color: rgba(255, 255, 255, 0.8); }
+  .notiflat.left {
+    left: 10px; }
+  .notiflat.right {
+    right: 10px; }
+  .notiflat.center {
+    width: 500px;
+    left: 50%;
+    margin-left: -250px; }
+  .notiflat.bottom {
+    bottom: 10px; }
+  .notiflat.top {
+    top: 10px; }
+
+@keyframes notispin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=notiflat.min.css.map */
