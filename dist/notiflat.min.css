@@ -12,6 +12,7 @@
   font-family: "Roboto"; }
   .notiflat .notification {
     position: relative;
+    overflow: hidden;
     display: none; }
     .notiflat .notification + .notification {
       margin-top: 10px; }
@@ -20,35 +21,47 @@
       font-style: normal;
       font-weight: normal;
       text-decoration: inherit;
-      font-size: 15px;
+      font-size: 50px;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 5px;
       color: rgba(255, 255, 255, 0.25); }
     .notiflat .notification.success {
-      background-color: #18A689;
+      background-color: #18a689;
       color: #c6f7ed; }
       .notiflat .notification.success:after {
-        content: "";
-        font-size: 48px; }
+        content: ""; }
     .notiflat .notification.info {
-      background-color: #2F82B2;
-      color: #24658a; }
+      background-color: #00a2d9;
+      color: #007ca6; }
+      .notiflat .notification.info:after {
+        content: ""; }
     .notiflat .notification.error {
-      background-color: #B23231;
-      color: black; }
+      background-color: #c75757;
+      color: #170808; }
+      .notiflat .notification.error:after {
+        content: ""; }
     .notiflat .notification.warning {
-      background-color: #B28588;
-      color: #221617; }
+      background-color: #ff9122;
+      color: #221100; }
+      .notiflat .notification.warning:after {
+        content: ""; }
     .notiflat .notification.question {
-      background-color: #777888;
+      background-color: #319db5;
       color: black; }
+      .notiflat .notification.question:after {
+        content: ""; }
     .notiflat .notification.loading {
-      background-color: #B27F94;
-      color: #1f1318; }
+      background-color: #353940;
+      color: black; }
       .notiflat .notification.loading:after {
         content: "";
         animation: notispin 2s linear infinite; }
+    .notiflat .notification.stripes {
+      background-size: 80px 80px;
+      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent); }
+    .notiflat .notification.shadow {
+      box-shadow: 0px 1px 12px 1px rgba(0, 0, 0, 0.5); }
   .notiflat section {
     padding: 12px 30px 10px 55px;
     color: rgba(255, 255, 255, 0.8);

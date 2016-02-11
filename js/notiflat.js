@@ -1,7 +1,7 @@
 /*
  * notiflat 
  * version: 0.1
- * homepage:
+ * homepage: code.tiagomfs.net/notiflat/
  *
  * Licensed under the MIT license
  *      http://www.opensource.org/licenses/mit-license.php
@@ -27,8 +27,7 @@
                 animateIn: null,
                 animateOut: null,
                 close: 'button',
-                shadow: false,
-                stripes: false,
+                classes: null,
                 onClose: function() {},
                 onStart: function() {}
             }, options);
@@ -73,7 +72,7 @@
         var notification_id = 'go-' + _makeid();
 
         $holder = $('[class="notiflat ' + settings.position + '"]');
-        $template = '<article id="' + notification_id + '" class="notification ' + settings.type + ' ' + (settings.close == 'self' ? 'close' : '') + ' ' + (settings.shadow ? 'shadow' : '') + ' ' + (settings.stripes ? 'stripes' : '') + '"><section>' + message + ' ' + (settings.close == 'button' && !$loading ? '<i class="fa fa-times-circle"></i>' : '' ) + '</section></article>';
+        $template = '<article id="' + notification_id + '" class="notification ' + settings.type + ' ' + (settings.close == 'self' ? 'close' : '') + ' ' + (settings.classes ? settings.classes : '') + '"><section>' + message + ' ' + (settings.close == 'button' && !$loading ? '<i class="fa fa-times-circle"></i>' : '' ) + '</section></article>';
         $holder.append($template);
 
         $notification = $("#" + notification_id);
@@ -105,12 +104,15 @@
 
                 if(settings.animateOut)
                 {
-                    $("#" + notification_id).addClass(settings.animateOut, function(){
-                    $(this).remove();
+                    $("#" + notification_id).addClass(settings.animateOut);
+
+                    setTimeout(function(){
+                        $("#" + notification_id).remove();
                         if($holder.find('article').length == 0){
                             $holder.remove();
                         }
-                    });
+                    }, 1000);
+                    
                 }
                 else
                 {
